@@ -5,7 +5,8 @@
     },
     "./routers.js": {
         "Event": "./events.js",
-        "Model": "./models.js"
+        "Model": "./models.js",
+        "Ajax": "./ajax.js"
     }
 }
 
