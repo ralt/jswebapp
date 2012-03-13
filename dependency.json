@@ -1,7 +1,5 @@
 {
     "./app.js": {
-        "es5_shim": "./node_modules/es5-shim/es5-shim.js",
-        "plates": "./node_modules/plates/lib/plates.js
         "router": "./routers.js",
         "controller": "./controllers.js",
         "model": "./models.js"
