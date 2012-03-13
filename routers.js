@@ -16,7 +16,10 @@ module.exports = {
             // Loads the template
             that.Ajax.request('GET', '/templates/notes.html', function(html) {
                 // Replaces the container with the template filled in with the datas
-                container.parentNode.replaceChild(Plates.bind(html, notes), container)
+                var map = Plates.map()
+                map.class('title').to('title')
+                map.class('text').to('text')
+                container.parentNode.replaceChild(Plates.bind(html, notes, map), container)
             }
         })
     }
