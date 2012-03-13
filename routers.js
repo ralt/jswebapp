@@ -4,16 +4,19 @@
 
 // Loading dependencies
 var Plates = require('plates')
-var containerId = 'container'
+var container = document.getElementById('container')
 
 module.exports = {
     init: function() {
         var that = this
-        // Listen to the "/" route
+        // Listens to the "/" route
         that.Event.addEventListener('/', function() {
+            // Loads the notes from the model
             var notes = that.Model.notes.getAll()
-            that.Ajax.get('/templates/notes.html', function(html) {
-                document.getElementById(containerId).innerHTML = Plates.bind(html, notes)
+            // Loads the template
+            that.Ajax.request('GET', '/templates/notes.html', function(html) {
+                // Replaces the container with the template filled in with the datas
+                container.parentNode.replaceChild(Plates.bind(html, notes), container)
             }
         })
     }
