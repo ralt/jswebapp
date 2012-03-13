@@ -1,8 +1,11 @@
 {
     "./app.js": {
-        "router": "./routers.js",
-        "controller": "./controllers.js",
-        "model": "./models.js"
+        "Event": "./events.js",
+        "Router": "./routers.js"
+    },
+    "./routers.js": {
+        "Event": "./events.js",
+        "Model": "./models.js"
     }
 }
 

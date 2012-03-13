@@ -3,11 +3,15 @@
  */
 
 // Loading dependencies
-var Plates = require('plates')
+var History = window.History
 
 module.exports = {
+    // Function run at launch
     init: function() {
-        this.router.listen
+        var that = this
+        window.onstatechange = function() {
+            that.Event.dispatchEvent(window.location.pathname)
+        }
     }
 }
 
