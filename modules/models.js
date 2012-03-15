@@ -4,7 +4,7 @@
 
 module.exports = {
     // Model for the notes
-    notes: {
+    notes: function() {
         var that = this
         var getAll = function() {
             return [

@@ -4,10 +4,12 @@
 
 module.exports = {
     dispatchEvent: function(name, datas) {
+        var events = this.events || []
         // Finds the callback for the event
+        var callback
         for (var i = 0, l = this.events.length; i < l; ++i) {
             if (this.events[i].name === name) {
-                var callback = this.events[i].callback
+                callback = this.events[i].callback
                 break
             }
         }
@@ -17,10 +19,12 @@ module.exports = {
         return this
     },
     addEventListener: function(name, callback) {
+        var events = this.events || []
         // Check if the event already exists
+        var exists
         for (var i = 0, l = this.events.length; i < l; ++i) {
             if (this.events[i].name === name) {
-                var exists = true
+                exists = true
             }
         }
         // If it does, return false
@@ -28,11 +32,12 @@ module.exports = {
             return false
         }
         // If it doesn't, adds the event to the list
-        this.events.push({name: name, name: callback})
+        this.events.push({name: name, callback: callback})
         // Allows chaining
         return this
     },
     removeListener: function(name) {
+        var events = this.events || []
         // Finds the index of the event
         for (var i = 0, l = this.events.length; i < l; ++i) {
             if (this.events[i].name === name) {
@@ -44,6 +49,6 @@ module.exports = {
         this.events.splice(i, 1)
         // Allows chaining
         return this
-    },
+    }
 }
 

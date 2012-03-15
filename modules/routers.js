@@ -20,7 +20,7 @@ module.exports = {
                 map.class('title').to('title')
                 map.class('text').to('text')
                 container.parentNode.replaceChild(Plates.bind(html, notes, map), container)
-            }
+            })
         })
     }
 }

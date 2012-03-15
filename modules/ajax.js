@@ -6,11 +6,12 @@ module.exports = {
     // AJAX function for GET requests
     request: function(type, url, callback) {
         // Instantiates the xhr object
+        var xhr
         if (window.XMLHttpRequest) {
-            var xhr = new XMLHttpRequest()
+            xhr = new XMLHttpRequest()
         }
         else if (window.ActiveXObject) {
-            var xhr = new ActiveXObject('Microsoft.XMLHTTP')
+            xhr = new ActiveXObject('Microsoft.XMLHTTP')
         }
         xhr.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
