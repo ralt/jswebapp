@@ -10,3 +10,6 @@ The following files are to define following a convention I've not yet made:
 - controllers.js
 - models.js
 
+[1]: https://github.com/Raynos/ncore
+[2]: https://github.com/kriskowal/es5-shim
+
