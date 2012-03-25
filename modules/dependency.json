@@ -1,0 +1,11 @@
+{
+    "./app.js": {
+        "Router": "./routers.js",
+        "Event": "./events.js"
+    },
+    "./routers.js": {
+        "Model": "./models.js",
+        "Event": "./events.js",
+        "Ajax": "./ajax.js"
+    }
+}
